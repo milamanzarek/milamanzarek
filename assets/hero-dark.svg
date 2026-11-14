@@ -1,0 +1,348 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 244" width="960" height="244" role="img" aria-label="Kamilla Gafurzianova - Foiling AI hallucinations and parrying ad-hoc chat into governed, shippable workflows">
+  <defs>
+    <clipPath id="heroInvClip-dark">
+      <rect x="1" y="1" width="958" height="242" rx="12" ry="12" />
+    </clipPath>
+    <style>
+      .px { shape-rendering: crispEdges; }
+      /* 4.8s 8-bit arcade loop (Fencer on LEFT, Hallucination on RIGHT):
+         0-20%: Mila en garde on left + invader approaches from right
+         20-40%: invader shoots "ad-hoc??" leftward -> Mila parries up-right!
+         40-55%: Mila steps in (feint)
+         55-85%: Mila LUNGES right! 👾 turns into [✓] shipped workflow! Left green lamp lights!
+         85-100%: recover to en garde
+      */
+      @keyframes milaTrack {
+        0%, 20% { transform: translate(336px, 152px); }
+        20.01%, 40% { transform: translate(366px, 152px); }
+        40.01%, 55% { transform: translate(404px, 152px); }
+        55.01%, 88% { transform: translate(466px, 152px); }
+        88.01%, 100% { transform: translate(336px, 152px); }
+      }
+      @keyframes mEgA {
+        0%, 20% { opacity: 1; }
+        20.01%, 88% { opacity: 0; }
+        88.01%, 100% { opacity: 1; }
+      }
+      @keyframes mEgB {
+        0%, 40% { opacity: 0; }
+        40.01%, 55% { opacity: 1; }
+        55.01%, 100% { opacity: 0; }
+      }
+      @keyframes mParry {
+        0%, 20% { opacity: 0; }
+        20.01%, 40% { opacity: 1; }
+        40.01%, 100% { opacity: 0; }
+      }
+      @keyframes mLunge {
+        0%, 55% { opacity: 0; }
+        55.01%, 88% { opacity: 1; }
+        88.01%, 100% { opacity: 0; }
+      }
+      @keyframes invTrack {
+        0%, 12% { transform: translate(686px, 156px); opacity: 1; }
+        12.01%, 25% { transform: translate(650px, 150px); opacity: 1; }
+        25.01%, 40% { transform: translate(616px, 156px); opacity: 1; }
+        40.01%, 55% { transform: translate(584px, 152px); opacity: 1; }
+        55.01%, 88% { transform: translate(584px, 152px); opacity: 0; }
+        88.01%, 100% { transform: translate(686px, 156px); opacity: 1; }
+      }
+      @keyframes invFlapA {
+        0%, 49.9% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes invFlapB {
+        0%, 49.9% { opacity: 0; }
+        50%, 100% { opacity: 1; }
+      }
+      @keyframes chatBolt {
+        0%, 20% { opacity: 0; transform: translate(544px, 166px); }
+        20.01%, 30% { opacity: 1; transform: translate(458px, 166px); }
+        30.01%, 42% { opacity: 1; transform: translate(486px, 146px); }
+        42.01%, 100% { opacity: 0; transform: translate(486px, 146px); }
+      }
+      @keyframes shippedPop {
+        0%, 55% { opacity: 0; transform: translate(586px, 156px); }
+        55.01%, 72% { opacity: 1; transform: translate(586px, 148px); }
+        72.01%, 88% { opacity: 1; transform: translate(586px, 144px); }
+        88.01%, 100% { opacity: 0; transform: translate(586px, 144px); }
+      }
+      @keyframes greenLamp {
+        0%, 55% { opacity: 0.22; }
+        55.01%, 88% { opacity: 1; }
+        88.01%, 100% { opacity: 0.22; }
+      }
+      @keyframes statusIdle {
+        0%, 20% { opacity: 1; }
+        20.01%, 88% { opacity: 0; }
+        88.01%, 100% { opacity: 1; }
+      }
+      @keyframes statusParry {
+        0%, 20% { opacity: 0; }
+        20.01%, 55% { opacity: 1; }
+        55.01%, 100% { opacity: 0; }
+      }
+      @keyframes statusShipped {
+        0%, 55% { opacity: 0; }
+        55.01%, 88% { opacity: 1; }
+        88.01%, 100% { opacity: 0; }
+      }
+      .mila-g { animation: milaTrack 4.8s steps(1, end) infinite; }
+      .m-ega { animation: mEgA 4.8s steps(1, end) infinite; }
+      .m-egb { animation: mEgB 4.8s steps(1, end) infinite; }
+      .m-pry { animation: mParry 4.8s steps(1, end) infinite; }
+      .m-lng { animation: mLunge 4.8s steps(1, end) infinite; }
+      .inv-g { animation: invTrack 4.8s steps(1, end) infinite; }
+      .inv-a { animation: invFlapA 0.6s steps(1, end) infinite; }
+      .inv-b { animation: invFlapB 0.6s steps(1, end) infinite; }
+      .bolt-g { animation: chatBolt 4.8s steps(1, end) infinite; }
+      .ship-g { animation: shippedPop 4.8s steps(1, end) infinite; }
+      .lamp { animation: greenLamp 4.8s steps(1, end) infinite; }
+      .st-idle { animation: statusIdle 4.8s steps(1, end) infinite; }
+      .st-parry { animation: statusParry 4.8s steps(1, end) infinite; }
+      .st-ship { animation: statusShipped 4.8s steps(1, end) infinite; }
+    </style>
+  </defs>
+
+  <g clip-path="url(#heroInvClip-dark)">
+    <rect x="1" y="1" width="958" height="242" rx="12" ry="12" fill="#101820" />
+    <rect x="0" y="0" width="960" height="5" fill="#6D5B8A" />
+  </g>
+  <rect x="1" y="1" width="958" height="242" rx="12" ry="12" fill="none" stroke="#263342" stroke-width="1.5" />
+
+  <!-- Header with proportional ASCII foil -->
+  <text x="36" y="34" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="600" letter-spacing="0.04em" fill="#C4B5FD">@milamanzarek  ·  olympic silver medalist in foil fencing  ──)─────────</text>
+  <text x="36" y="74" font-family="'Literata', Georgia, serif" font-size="33" font-weight="600" letter-spacing="-0.015em" fill="#FFFDF8">Kamilla Gafurzianova</text>
+  <text x="36" y="102" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="500" fill="#CBD5E1">Foiling AI hallucinations and parrying ad-hoc chat into governed, shippable workflows.</text>
+
+  <!-- 8-Bit Arcade Piste -->
+  <rect x="36" y="120" width="888" height="102" rx="8" ry="8" fill="#151F2B" stroke="#243344" stroke-width="1" />
+
+  <!-- Center Scoring Box (Left lamp = Mila's green light!) -->
+  <g class="px">
+    <rect x="392" y="127" width="176" height="22" fill="#171225" />
+    <rect x="394" y="129" width="172" height="18" fill="#211832" />
+    <rect x="400" y="133" width="16" height="10" fill="#2EBFA0" class="lamp" />
+    <text x="480" y="142" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" font-weight="600" fill="#CBD5E1" class="st-idle">EN GARDE · FOIL</text>
+    <text x="480" y="142" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" font-weight="600" fill="#FACC15" class="st-parry">PARRY AD-HOC CHAT!</text>
+    <text x="480" y="142" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" font-weight="600" fill="#2EBFA0" class="st-ship">FOILED -&gt; SHIPPED!</text>
+    <rect x="544" y="133" width="16" height="10" fill="#A855F7" opacity="0.32" />
+  </g>
+
+  <!-- Piste Strip Line -->
+  <g class="px">
+    <rect x="64" y="204" width="832" height="3" fill="#334155" />
+    <rect x="479" y="199" width="3" height="11" fill="#64748B" />
+    <rect x="260" y="201" width="3" height="7" fill="#64748B" />
+    <rect x="700" y="201" width="3" height="7" fill="#64748B" />
+  </g>
+
+  <!-- Left corner: Mila's tactical state | Right corner: Hallucination -->
+  <text x="68" y="142" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#64748B" class="st-idle">foil · distance + timing</text>
+  <text x="68" y="142" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" font-weight="600" fill="#F59E0B" class="st-parry">blade parry ──)─────</text>
+  <text x="68" y="142" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" font-weight="600" fill="#16A34A" class="st-ship">governed &amp; shipped ✓</text>
+  <text x="892" y="142" text-anchor="end" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#64748B">wild_hallucination.exe</text>
+
+  <!-- Approaching 8-Bit 👾 Space Invader Hallucination on the RIGHT -->
+  <g class="px inv-g">
+    <text x="22" y="-6" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="9.5" font-weight="600" fill="#A855F7">hallucination</text>
+    <g class="inv-a"><rect x="8" y="0" width="4" height="4" fill="#C084FC" />
+      <rect x="32" y="0" width="4" height="4" fill="#C084FC" />
+      <rect x="12" y="4" width="4" height="4" fill="#C084FC" />
+      <rect x="28" y="4" width="4" height="4" fill="#C084FC" />
+      <rect x="8" y="8" width="28" height="4" fill="#C084FC" />
+      <rect x="4" y="12" width="8" height="4" fill="#C084FC" />
+      <rect x="12" y="12" width="4" height="4" fill="#101820" />
+      <rect x="16" y="12" width="12" height="4" fill="#C084FC" />
+      <rect x="28" y="12" width="4" height="4" fill="#101820" />
+      <rect x="32" y="12" width="8" height="4" fill="#C084FC" />
+      <rect x="0" y="16" width="44" height="4" fill="#C084FC" />
+      <rect x="0" y="20" width="4" height="4" fill="#C084FC" />
+      <rect x="8" y="20" width="28" height="4" fill="#C084FC" />
+      <rect x="40" y="20" width="4" height="4" fill="#C084FC" />
+      <rect x="0" y="24" width="4" height="4" fill="#C084FC" />
+      <rect x="8" y="24" width="4" height="4" fill="#C084FC" />
+      <rect x="32" y="24" width="4" height="4" fill="#C084FC" />
+      <rect x="40" y="24" width="4" height="4" fill="#C084FC" />
+      <rect x="12" y="28" width="8" height="4" fill="#C084FC" />
+      <rect x="24" y="28" width="8" height="4" fill="#C084FC" /></g>
+    <g class="inv-b"><rect x="8" y="0" width="4" height="4" fill="#C084FC" />
+      <rect x="32" y="0" width="4" height="4" fill="#C084FC" />
+      <rect x="0" y="4" width="4" height="4" fill="#C084FC" />
+      <rect x="12" y="4" width="4" height="4" fill="#C084FC" />
+      <rect x="28" y="4" width="4" height="4" fill="#C084FC" />
+      <rect x="40" y="4" width="4" height="4" fill="#C084FC" />
+      <rect x="0" y="8" width="4" height="4" fill="#C084FC" />
+      <rect x="8" y="8" width="28" height="4" fill="#C084FC" />
+      <rect x="40" y="8" width="4" height="4" fill="#C084FC" />
+      <rect x="0" y="12" width="12" height="4" fill="#C084FC" />
+      <rect x="12" y="12" width="4" height="4" fill="#101820" />
+      <rect x="16" y="12" width="12" height="4" fill="#C084FC" />
+      <rect x="28" y="12" width="4" height="4" fill="#101820" />
+      <rect x="32" y="12" width="12" height="4" fill="#C084FC" />
+      <rect x="0" y="16" width="44" height="4" fill="#C084FC" />
+      <rect x="8" y="20" width="28" height="4" fill="#C084FC" />
+      <rect x="8" y="24" width="4" height="4" fill="#C084FC" />
+      <rect x="32" y="24" width="4" height="4" fill="#C084FC" />
+      <rect x="4" y="28" width="4" height="4" fill="#C084FC" />
+      <rect x="36" y="28" width="4" height="4" fill="#C084FC" /></g>
+  </g>
+
+  <!-- Ad-hoc chat projectile fired leftward & deflected upward on parry -->
+  <g class="px bolt-g">
+    <rect x="0" y="0" width="66" height="15" rx="3" fill="#211832" stroke="#A855F7" stroke-width="1" />
+    <text x="33" y="11" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="9" fill="#E9D5FF">ad-hoc??</text>
+  </g>
+
+  <!-- Transformed [✓] Governed Workflow Cube on the RIGHT when Mila's lunge lands -->
+  <g class="px ship-g">
+    <text x="20" y="-6" text-anchor="middle" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" font-weight="700" fill="#16A34A">shipped!</text>
+    <rect x="3.6" y="0.0" width="32.4" height="3.6" fill="#2EBFA0" />
+      <rect x="0.0" y="3.6" width="39.6" height="3.6" fill="#2EBFA0" />
+      <rect x="0.0" y="7.2" width="7.2" height="3.6" fill="#2EBFA0" />
+      <rect x="28.8" y="7.2" width="3.6" height="3.6" fill="#06281E" />
+      <rect x="32.4" y="7.2" width="7.2" height="3.6" fill="#2EBFA0" />
+      <rect x="0.0" y="10.8" width="7.2" height="3.6" fill="#2EBFA0" />
+      <rect x="25.2" y="10.8" width="7.2" height="3.6" fill="#06281E" />
+      <rect x="36.0" y="10.8" width="3.6" height="3.6" fill="#2EBFA0" />
+      <rect x="0.0" y="14.4" width="7.2" height="3.6" fill="#2EBFA0" />
+      <rect x="10.8" y="14.4" width="3.6" height="3.6" fill="#06281E" />
+      <rect x="21.6" y="14.4" width="7.2" height="3.6" fill="#06281E" />
+      <rect x="36.0" y="14.4" width="3.6" height="3.6" fill="#2EBFA0" />
+      <rect x="0.0" y="18.0" width="7.2" height="3.6" fill="#2EBFA0" />
+      <rect x="14.4" y="18.0" width="10.8" height="3.6" fill="#06281E" />
+      <rect x="36.0" y="18.0" width="3.6" height="3.6" fill="#2EBFA0" />
+      <rect x="0.0" y="21.6" width="7.2" height="3.6" fill="#2EBFA0" />
+      <rect x="18.0" y="21.6" width="3.6" height="3.6" fill="#06281E" />
+      <rect x="36.0" y="21.6" width="3.6" height="3.6" fill="#2EBFA0" />
+      <rect x="0.0" y="25.2" width="39.6" height="3.6" fill="#2EBFA0" />
+      <rect x="3.6" y="28.8" width="32.4" height="3.6" fill="#2EBFA0" />
+    <rect x="-8" y="6" width="4" height="4" fill="#2EBFA0" />
+    <rect x="44" y="4" width="4" height="4" fill="#FACC15" />
+    <rect x="20" y="-18" width="4" height="4" fill="#A78BFA" />
+  </g>
+
+  <!-- Pixel Foil Fencer (Mila) on the LEFT -->
+  <g class="px mila-g">
+    <g class="m-ega"><rect x="24.5" y="0.0" width="14.0" height="3.5" fill="#64748B" />
+      <rect x="21.0" y="3.5" width="21.0" height="3.5" fill="#64748B" />
+      <rect x="21.0" y="7.0" width="21.0" height="3.5" fill="#64748B" />
+      <rect x="7.0" y="10.5" width="7.0" height="3.5" fill="#FFFFFF" />
+      <rect x="24.5" y="10.5" width="14.0" height="3.5" fill="#94A3B8" />
+      <rect x="3.5" y="14.0" width="7.0" height="3.5" fill="#FFFFFF" />
+      <rect x="28.0" y="14.0" width="14.0" height="3.5" fill="#A78BFA" />
+      <rect x="52.5" y="14.0" width="3.5" height="3.5" fill="#F59E0B" />
+      <rect x="7.0" y="17.5" width="7.0" height="3.5" fill="#FFFFFF" />
+      <rect x="24.5" y="17.5" width="21.0" height="3.5" fill="#A78BFA" />
+      <rect x="45.5" y="17.5" width="10.5" height="3.5" fill="#F59E0B" />
+      <rect x="56.0" y="17.5" width="31.5" height="3.5" fill="#E2E8F0" />
+      <rect x="87.5" y="17.5" width="3.5" height="3.5" fill="#2EBFA0" />
+      <rect x="10.5" y="21.0" width="14.0" height="3.5" fill="#FFFFFF" />
+      <rect x="24.5" y="21.0" width="21.0" height="3.5" fill="#A78BFA" />
+      <rect x="45.5" y="21.0" width="3.5" height="3.5" fill="#F59E0B" />
+      <rect x="52.5" y="21.0" width="3.5" height="3.5" fill="#F59E0B" />
+      <rect x="21.0" y="24.5" width="21.0" height="3.5" fill="#FFFFFF" />
+      <rect x="17.5" y="28.0" width="28.0" height="3.5" fill="#FFFFFF" />
+      <rect x="14.0" y="31.5" width="14.0" height="3.5" fill="#FFFFFF" />
+      <rect x="35.0" y="31.5" width="14.0" height="3.5" fill="#FFFFFF" />
+      <rect x="10.5" y="35.0" width="10.5" height="3.5" fill="#FFFFFF" />
+      <rect x="42.0" y="35.0" width="10.5" height="3.5" fill="#FFFFFF" />
+      <rect x="10.5" y="38.5" width="7.0" height="3.5" fill="#A78BFA" />
+      <rect x="45.5" y="38.5" width="7.0" height="3.5" fill="#A78BFA" />
+      <rect x="10.5" y="42.0" width="7.0" height="3.5" fill="#A78BFA" />
+      <rect x="45.5" y="42.0" width="7.0" height="3.5" fill="#A78BFA" />
+      <rect x="7.0" y="45.5" width="10.5" height="3.5" fill="#E2E8F0" />
+      <rect x="45.5" y="45.5" width="14.0" height="3.5" fill="#E2E8F0" /></g>
+    <g class="m-egb"><rect x="24.5" y="3.5" width="14.0" height="3.5" fill="#64748B" />
+      <rect x="21.0" y="7.0" width="21.0" height="3.5" fill="#64748B" />
+      <rect x="21.0" y="10.5" width="21.0" height="3.5" fill="#64748B" />
+      <rect x="7.0" y="14.0" width="7.0" height="3.5" fill="#FFFFFF" />
+      <rect x="24.5" y="14.0" width="14.0" height="3.5" fill="#94A3B8" />
+      <rect x="52.5" y="14.0" width="3.5" height="3.5" fill="#F59E0B" />
+      <rect x="3.5" y="17.5" width="7.0" height="3.5" fill="#FFFFFF" />
+      <rect x="24.5" y="17.5" width="21.0" height="3.5" fill="#A78BFA" />
+      <rect x="45.5" y="17.5" width="10.5" height="3.5" fill="#F59E0B" />
+      <rect x="56.0" y="17.5" width="31.5" height="3.5" fill="#E2E8F0" />
+      <rect x="87.5" y="17.5" width="3.5" height="3.5" fill="#2EBFA0" />
+      <rect x="7.0" y="21.0" width="14.0" height="3.5" fill="#FFFFFF" />
+      <rect x="24.5" y="21.0" width="21.0" height="3.5" fill="#A78BFA" />
+      <rect x="45.5" y="21.0" width="3.5" height="3.5" fill="#F59E0B" />
+      <rect x="52.5" y="21.0" width="3.5" height="3.5" fill="#F59E0B" />
+      <rect x="21.0" y="24.5" width="21.0" height="3.5" fill="#FFFFFF" />
+      <rect x="17.5" y="28.0" width="28.0" height="3.5" fill="#FFFFFF" />
+      <rect x="14.0" y="31.5" width="10.5" height="3.5" fill="#FFFFFF" />
+      <rect x="38.5" y="31.5" width="10.5" height="3.5" fill="#FFFFFF" />
+      <rect x="10.5" y="35.0" width="10.5" height="3.5" fill="#FFFFFF" />
+      <rect x="42.0" y="35.0" width="10.5" height="3.5" fill="#FFFFFF" />
+      <rect x="10.5" y="38.5" width="7.0" height="3.5" fill="#A78BFA" />
+      <rect x="45.5" y="38.5" width="7.0" height="3.5" fill="#A78BFA" />
+      <rect x="10.5" y="42.0" width="7.0" height="3.5" fill="#A78BFA" />
+      <rect x="45.5" y="42.0" width="7.0" height="3.5" fill="#A78BFA" />
+      <rect x="7.0" y="45.5" width="10.5" height="3.5" fill="#E2E8F0" />
+      <rect x="45.5" y="45.5" width="14.0" height="3.5" fill="#E2E8F0" /></g>
+    <g class="m-pry"><rect x="24.5" y="0.0" width="14.0" height="3.5" fill="#64748B" />
+      <rect x="87.5" y="0.0" width="3.5" height="3.5" fill="#2EBFA0" />
+      <rect x="21.0" y="3.5" width="21.0" height="3.5" fill="#64748B" />
+      <rect x="80.5" y="3.5" width="7.0" height="3.5" fill="#E2E8F0" />
+      <rect x="21.0" y="7.0" width="21.0" height="3.5" fill="#64748B" />
+      <rect x="73.5" y="7.0" width="7.0" height="3.5" fill="#E2E8F0" />
+      <rect x="7.0" y="10.5" width="7.0" height="3.5" fill="#FFFFFF" />
+      <rect x="24.5" y="10.5" width="14.0" height="3.5" fill="#94A3B8" />
+      <rect x="66.5" y="10.5" width="7.0" height="3.5" fill="#E2E8F0" />
+      <rect x="3.5" y="14.0" width="7.0" height="3.5" fill="#FFFFFF" />
+      <rect x="28.0" y="14.0" width="14.0" height="3.5" fill="#A78BFA" />
+      <rect x="52.5" y="14.0" width="3.5" height="3.5" fill="#F59E0B" />
+      <rect x="59.5" y="14.0" width="7.0" height="3.5" fill="#E2E8F0" />
+      <rect x="7.0" y="17.5" width="7.0" height="3.5" fill="#FFFFFF" />
+      <rect x="24.5" y="17.5" width="21.0" height="3.5" fill="#A78BFA" />
+      <rect x="45.5" y="17.5" width="10.5" height="3.5" fill="#F59E0B" />
+      <rect x="56.0" y="17.5" width="3.5" height="3.5" fill="#E2E8F0" />
+      <rect x="10.5" y="21.0" width="14.0" height="3.5" fill="#FFFFFF" />
+      <rect x="24.5" y="21.0" width="21.0" height="3.5" fill="#A78BFA" />
+      <rect x="45.5" y="21.0" width="3.5" height="3.5" fill="#F59E0B" />
+      <rect x="52.5" y="21.0" width="3.5" height="3.5" fill="#F59E0B" />
+      <rect x="21.0" y="24.5" width="21.0" height="3.5" fill="#FFFFFF" />
+      <rect x="17.5" y="28.0" width="28.0" height="3.5" fill="#FFFFFF" />
+      <rect x="14.0" y="31.5" width="14.0" height="3.5" fill="#FFFFFF" />
+      <rect x="35.0" y="31.5" width="14.0" height="3.5" fill="#FFFFFF" />
+      <rect x="10.5" y="35.0" width="10.5" height="3.5" fill="#FFFFFF" />
+      <rect x="42.0" y="35.0" width="10.5" height="3.5" fill="#FFFFFF" />
+      <rect x="10.5" y="38.5" width="7.0" height="3.5" fill="#A78BFA" />
+      <rect x="45.5" y="38.5" width="7.0" height="3.5" fill="#A78BFA" />
+      <rect x="10.5" y="42.0" width="7.0" height="3.5" fill="#A78BFA" />
+      <rect x="45.5" y="42.0" width="7.0" height="3.5" fill="#A78BFA" />
+      <rect x="7.0" y="45.5" width="10.5" height="3.5" fill="#E2E8F0" />
+      <rect x="45.5" y="45.5" width="14.0" height="3.5" fill="#E2E8F0" /></g>
+    <g class="m-lng"><rect x="45.5" y="0.0" width="14.0" height="3.5" fill="#64748B" />
+      <rect x="42.0" y="3.5" width="21.0" height="3.5" fill="#64748B" />
+      <rect x="42.0" y="7.0" width="21.0" height="3.5" fill="#64748B" />
+      <rect x="0.0" y="10.5" width="21.0" height="3.5" fill="#FFFFFF" />
+      <rect x="45.5" y="10.5" width="14.0" height="3.5" fill="#94A3B8" />
+      <rect x="17.5" y="14.0" width="14.0" height="3.5" fill="#FFFFFF" />
+      <rect x="42.0" y="14.0" width="21.0" height="3.5" fill="#A78BFA" />
+      <rect x="77.0" y="14.0" width="3.5" height="3.5" fill="#F59E0B" />
+      <rect x="84.0" y="14.0" width="21.0" height="3.5" fill="#E2E8F0" />
+      <rect x="31.5" y="17.5" width="10.5" height="3.5" fill="#FFFFFF" />
+      <rect x="42.0" y="17.5" width="21.0" height="3.5" fill="#A78BFA" />
+      <rect x="63.0" y="17.5" width="14.0" height="3.5" fill="#F59E0B" />
+      <rect x="77.0" y="17.5" width="7.0" height="3.5" fill="#E2E8F0" />
+      <rect x="98.0" y="17.5" width="17.5" height="3.5" fill="#E2E8F0" />
+      <rect x="115.5" y="17.5" width="3.5" height="3.5" fill="#2EBFA0" />
+      <rect x="38.5" y="21.0" width="24.5" height="3.5" fill="#FFFFFF" />
+      <rect x="63.0" y="21.0" width="7.0" height="3.5" fill="#F59E0B" />
+      <rect x="77.0" y="21.0" width="3.5" height="3.5" fill="#F59E0B" />
+      <rect x="31.5" y="24.5" width="28.0" height="3.5" fill="#FFFFFF" />
+      <rect x="24.5" y="28.0" width="14.0" height="3.5" fill="#FFFFFF" />
+      <rect x="52.5" y="28.0" width="14.0" height="3.5" fill="#FFFFFF" />
+      <rect x="17.5" y="31.5" width="14.0" height="3.5" fill="#FFFFFF" />
+      <rect x="59.5" y="31.5" width="10.5" height="3.5" fill="#FFFFFF" />
+      <rect x="10.5" y="35.0" width="14.0" height="3.5" fill="#FFFFFF" />
+      <rect x="59.5" y="35.0" width="10.5" height="3.5" fill="#A78BFA" />
+      <rect x="7.0" y="38.5" width="10.5" height="3.5" fill="#A78BFA" />
+      <rect x="59.5" y="38.5" width="10.5" height="3.5" fill="#A78BFA" />
+      <rect x="3.5" y="42.0" width="10.5" height="3.5" fill="#A78BFA" />
+      <rect x="59.5" y="42.0" width="10.5" height="3.5" fill="#A78BFA" />
+      <rect x="0.0" y="45.5" width="14.0" height="3.5" fill="#E2E8F0" />
+      <rect x="59.5" y="45.5" width="17.5" height="3.5" fill="#E2E8F0" /></g>
+  </g>
+</svg>
