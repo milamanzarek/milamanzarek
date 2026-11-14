@@ -73,7 +73,7 @@
 </p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/contrib-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/contrib-snake-light.svg">
-  <img alt="Pixel Contribution Snake" src="./assets/contrib-snake-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/milamanzarek/milamanzarek/output/contrib-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/milamanzarek/milamanzarek/output/contrib-snake-light.svg">
+  <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/milamanzarek/milamanzarek/output/contrib-snake-light.svg" width="100%">
 </picture>
